@@ -1,0 +1,31 @@
+on: [push]
+
+jobs:
+  gist-sync:
+    name: gist-sync
+    runs-on: ubuntu-latest
+    steps:
+    #PIC18F4550
+      - name: Checkout
+        uses: actions/checkout@v2
+      - uses: vhperaltaj/gist-sync-action@v1.0.0
+        id: PIC18F4550
+        with:
+          auth: ${{ secrets.GIST_TOKEN }}
+          gist_url: https://gist.github.com/microside-mx/1527f0f6d0d993f810fd6888dadfd8ac
+          gist_title: 14-MPLAB-motorinfrarrojo-4550.c
+          gist_description: Prácticas MPLABX
+          github_file: Proyecto/PIC18F4550/14_Motor_IR.X/main.c
+          file_encoding: ISO-8859-1
+    #PIC18F45K50
+      - name: Checkout
+        uses: actions/checkout@v2
+      - uses: vhperaltaj/gist-sync-action@v1.0.0
+        id: PIC18F45K50
+        with:
+          auth: ${{ secrets.GIST_TOKEN }}
+          gist_url: https://gist.github.com/microside-mx/a824cf4f66e2b82fe0a847c8d779392d
+          gist_title: 14-MPLAB-MotorInfrarojo.c
+          gist_description: Prácticas MPLABX
+          github_file: Proyecto/PIC18F45K50/14_MOTOR_INFRARROJO.X/main.c
+          file_encoding: ISO-8859-1
